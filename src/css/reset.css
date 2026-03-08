@@ -10,7 +10,8 @@ p{
 
 img{
     display: block;
-    
+    max-width: 100%;
+    height: auto;
 }
 
 button{
@@ -21,12 +22,21 @@ button{
 address{
     font-style: normal;
 }
-a {
-    text-decoration: none;
-}
-ul, ol {
-    margin: 0;
+ul,
+ol{
+    list-style-type: none;
     padding: 0;
-    list-style: none;
-    
+    margin: 0;
+}
+a{
+    text-decoration: none;
+    color: currentColor;
+}
+*{
+    box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
