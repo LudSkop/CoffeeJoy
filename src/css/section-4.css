@@ -1,6 +1,6 @@
 .container-experience {
     padding: 64px 0;
-    background-color: yellow;
+  
 }
 .wrapper-text {
     display: flex;
@@ -67,9 +67,7 @@
 
 
 @media only screen and (min-width: 768px) {
-    .container-experience {
-        background-color: yellow;
-    }
+   
     .wrapper-text {
         width: 768px;
         height: 94px;
@@ -113,17 +111,14 @@
     }
     .photo-section4:nth-child(7) {
         width: 100%;
-        /* займати весь ряд */
         display: flex;
         justify-content: center;
-        /* картинка по центру */
+      
     }
 }
+
 @media only screen and (min-width: 1440px) {
-    .container-experience {
-        background-color: blue;
-       
-    }
+
     .wrapper-text {
         width: 768px;
         height: 109px;
@@ -132,11 +127,250 @@
         font-size: 48px;
     }
     .experience-list-photo {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        height: 1217px;
-
+        display: grid;
+        grid-template-columns: repeat(3, 416px);
+        grid-template-rows: 478px 234px 416px;
+        height: 948px;
+        justify-content: space-between;
+       
+        /* скидаємо всі залишки flex */
+            flex-direction: unset;
+            flex-wrap: unset;
+            justify-content: unset;
+            align-items: unset;
+            width: max-content;
+            /* щоб grid не звужувався */
+            margin: 0 auto;
+       
     }
+.photo-section4:nth-child(1),
+.photo-section4:nth-child(6) {
+    margin-bottom: 200px;
+    /* або будь-яке потрібне значення */
+}
+
+
+.photo-section4:nth-child(1) img,
+.photo-section4:nth-child(2) img,
+.photo-section4:nth-child(5) img,
+.photo-section4:nth-child(6) img,
+.photo-section4:nth-child(7) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+       
+  
+}
+
+.photo-section4:nth-child(3) img,
+.photo-section4:nth-child(4) img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+    
+   
+}
+
+/* 📌 РОЗТАШУВАННЯ ЕЛЕМЕНТІВ ПО GRID */
+
+/* 1 колонка */
+.photo-section4:nth-child(1) {
+    grid-row: 1;
+    grid-column: 1;
+    width: 416px;
+    height: 416px;
+
+    
+}
+.photo-section4:nth-child(2) {
+    grid-row: 2 ;
+    grid-column: 1;
+    width: 416px;
+    height: 416px;
+        margin-top: 0;
+        justify-self: start;
+        align-self: start;
+   
 
 }
+
+.photo-section4:nth-child(3) {
+    grid-row: 1 ;
+    grid-column: 2;
+    width: 416px;
+    height: 234px;
+    justify-self: start;
+    align-self: start;
+  
+    
+}
+.photo-section4:nth-child(4) {
+    grid-row: 1;
+    grid-column: 2;
+    width: 416px;
+    height: 234px;
+    align-self: end;
+        
+   
+   
+}
+/* 📌 Що важливо пам’ятати Номер колонки/ряду починається з 1,
+не з 0 
+grid-column - задає в яку вертикальну смугу стане елемент 
+grid-row - задає в яку горизонтальну смугу стане елемент 
+Так можна ставити елементи хоч у шахматному порядку,
+хоч довільно*/
+.photo-section4:nth-child(5) {
+    grid-row: 2;
+    grid-column: 2;
+    width: 416px;
+    height: 416px;
+   
+
+}
+
+.photo-section4:nth-child(6) {
+    grid-row: 1;
+    grid-column: 3;
+    width: 416px;
+    height: 416px;
+}
+.photo-section4:nth-child(7) {
+    grid-row: 2;
+    grid-column: 3;
+    width: 416px;
+    height: 416px;
+    align-self: start;
+    justify-self: start;
+
+}     
+
+
+}
+@media only screen and (min-width: 1500px) {
+.experience-list-photo {
+        display: grid;
+        grid-template-columns: repeat(3, 416px);
+        grid-template-rows: minmax(234px, 416px) minmax(234px, auto) minmax(416px, auto) minmax(416px, auto);
+        grid-gap: 10px;
+    
+        height: 948px;
+    
+    }
+
+
+    .photo-section4 {
+        width: 416px;
+    }
+
+    .photo-section4:nth-child(1),
+    .photo-section4:nth-child(2),
+    .photo-section4:nth-child(5),
+    .photo-section4:nth-child(6),
+    .photo-section4:nth-child(7) {
+        height: 416px;
+    }
+
+    .photo-section4:nth-child(3),
+    .photo-section4:nth-child(4) {
+        height: 234px;
+    }
+
+    .photo-section4:nth-child(1) {
+        grid-row: 1;
+        grid-column: 1;
+    }
+        .photo-section4:nth-child(3) {
+            grid-row: 1;
+            grid-column: 2;
+            align-self: start;
+        }
+.photo-section4:nth-child(4) {
+    grid-row: 2;
+    grid-column: 2;
+    align-self: end;
+}
+.photo-section4:nth-child(5) {
+    /* Переходимо до 3-го ряду, щоб вирівнятися з Фото 2 (яке тепер 416px) */
+    grid-row: 3;
+    grid-column: 2;
+}
+.photo-section4:nth-child(2) {
+    /* Переміщуємо на 3-й ряд, щоб вирівнятися з Фото 5 */
+    grid-row: 3 ;
+    grid-column: 1;
+}
+.photo-section4:nth-child(6) {
+    grid-row: 1 / 4;
+    grid-column: 3;
+}
+.photo-section4:nth-child(7) {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+
+}
+
+
+
+
+/*
+.experience-list-photo {
+    display: grid;
+    grid-template-columns: repeat(3, 416px);
+    grid-template-rows:  minmax(234px, auto) auto;
+    grid-template-areas:
+        "photo1 photo3 photo6"
+        "photo2 photo4 photo7"
+        "photo5 photo5 photo5 ";
+    gap: 32px;
+}
+
+.photo-section4:nth-child(1) {
+    grid-area: photo1;
+    width: 416px;
+    height: 416px;
+}
+
+.photo-section4:nth-child(2) {
+    grid-area: photo2;
+    width: 416px;
+    height: 416px;
+}
+
+.photo-section4:nth-child(3) {
+    grid-area: photo3;
+    width: 416px;
+    height: 234px;
+}
+.photo-section4:nth-child(4) {
+    grid-area: photo4;
+    width: 416px;
+    height: 234px;
+}
+.photo-section4:nth-child(5) {
+    grid-area: photo5;
+    width: 416px;
+    height: 416px;
+    justify-self: center;
+}
+.photo-section4:nth-child(6) {
+    grid-area: photo6;
+    width: 416px;
+    height: 416px;
+}
+.photo-section4:nth-child(7) {
+    grid-area: photo7;
+    width: 416px;
+    height: 416px;
+}
+}*/
+
+
+
+       
+  
+

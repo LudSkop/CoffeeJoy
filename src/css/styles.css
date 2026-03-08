@@ -9,17 +9,22 @@
 @import url('./base.css');
 @import url('./container.css');
 @import url('./animations.css');
+@import url('./common.css');
+@import url('./utils.css');
+
 
 
 /* Sections style */
 @import url('./header.css');
-@import url('./section-1.css');
-@import url('./section-2.css');
-@import url('./section-3.css');
+@import url('./hero-1.css');
+@import url('./quality-2.css');
+@import url('./welcome-3.css');
 @import url('./section-4.css');
-@import url('./section-5.css');
-@import url('./section-6.css');
-@import url('./section-7.css');
+@import url('./subscribe-5.css');
+@import url('./testimonials-6.css');
+@import url('./location-7.css');
+@import url('./mobile-menu.css');
+@import url('./success-sub.css');
 @import url('./footer.css');
 
 
